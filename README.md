@@ -1,2 +1,2 @@
 # Deep-Emotion
-This is implemetation of the paper Deep Emotion
+This is implementation of the paper Deep Emotion

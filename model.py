@@ -79,4 +79,3 @@ class DeepEmotion(nn.Module): #inherits nn.module here
             out = self.fc_2(out)
             #----------------------------------------------------------------#
             return out
-print("Cat")

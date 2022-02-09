@@ -15,7 +15,7 @@ from tqdm import tqdm
 
 class GenerateData():
     def __init__(self,datapath):
-        self.datapath = datapath
+        self.data_path = datapath
         #this data path is of test and train
         #we are using fer2013 dataset
     

@@ -15,7 +15,7 @@ class CustomDataset(Dataset): #inherits from torch.utils.data.dataset
     #datatype is basically dataset type
     def __init__(self,csv_file,img_dir,datatype,transform):
         self.csv_file = pd.read_csv(csv_file)
-        self.lables = self.csv_file['emotion']
+        self.lables = self.csv_file["emotion"]
         self.img_dir = img_dir
         self.transform = transform
         self.datatype = datatype

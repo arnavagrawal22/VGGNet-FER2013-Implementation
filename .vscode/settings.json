@@ -1,10 +1,12 @@
 {
-    "cSpell.words": [
-        "asarray",
-        "cuda",
-        "dtype",
-        "iloc",
-        "optim",
-        "tqdm"
-    ]
+  "cSpell.words": [
+    "asarray",
+    "cuda",
+    "dtype",
+    "iloc",
+    "Kaggle",
+    "optim",
+    "preds",
+    "tqdm"
+  ]
 }

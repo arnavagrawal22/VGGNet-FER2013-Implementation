@@ -20,18 +20,21 @@ class GenerateData():
         #we are using fer2013 dataset
     
     #this can be done manually too
-    def split(self,testfile = "final_test",valfile = "val"):
+    def split(self,trainfile = "train" ,testfile = "test",valfile = "val"):
         #so fer 2013 test data csv has both val and test files mixed. We need to split them.
         #file which needs to be splitted:
-        csv_path = self.data_path +"/"+ 'test.csv' 
+        csv_path = self.data_path +"/"+ 'fer2013.csv' 
         #reading using pandas:
-        test = pd.read_csv(csv_path)
+        fer2013 = pd.read_csv(csv_path)
+        #Training
+        train_data = pd.DataFrame(fer2013.iloc[:28709,:])
         #splitting into val:
-        validation_data = pd.DataFrame(test.iloc[:3589,:]) #using iloc function of pd
+        validation_data = pd.DataFrame(fer2013.iloc[28709:32298,:]) #using iloc function of pd
         #test data:
-        test_data = pd.DataFrame(test.iloc[3589:,:])
+        test_data = pd.DataFrame(fer2013.iloc[32298:,:])
 
         #saving as test and train:
+        train_data.to_csv(self.data_path+"/"+trainfile+".csv")
         test_data.to_csv(self.data_path+"/"+testfile+".csv")
         validation_data.to_csv(self.data_path+"/"+valfile+".csv")
         print("Done splitting the test file into validation & final test file")

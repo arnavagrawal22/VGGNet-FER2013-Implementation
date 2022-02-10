@@ -1,4 +1,4 @@
-#nn.conv2d(in channel, outchannels, kernel size)
+#nn.Conv2d(in channel, outchannels, kernel size)
 #nn.MaxPool2d(kernel,stride)
 
 import torch
@@ -10,20 +10,20 @@ class DeepEmotion(nn.Module): #inherits nn.module here
     def __init__(self):
         super(DeepEmotion, self).__init__()
         # inchannels = 1 (gray scale images), outchannels = 10 (no. of fliters), filter size = 3 * 3 
-        self.conv_1 = nn.conv2d(1,10,3) #48*48
+        self.conv_1 = nn.Conv2d(1,10,3) #48*48
         # 10 from prev, 10 outgoing, 3x3 kernel
-        self.conv_2 = nn.conv2d(10,10,3) #46 * 46
+        self.conv_2 = nn.Conv2d(10,10,3) #46 * 46
         # kernel size = 2, stride = 2
         self.pool_1 = nn.MaxPool2d(2,2) #23 * 23
         #----------------------------------------------------------------#    
-        self.conv_3 = nn.conv2d(10,10,3) #21 * 21
-        self.conv_4 = nn.conv2d(10,10,3) #19 * 19
+        self.conv_3 = nn.Conv2d(10,10,3) #21 * 21
+        self.conv_4 = nn.Conv2d(10,10,3) #19 * 19
         self.pool_2 = nn.MaxPool2d(2,2) #9*9
         #----------------------------------------------------------------#
         self.norm = nn.BatchNorm2d(10) #num_features – C from an expected input of size (N, C, H, W)
         #image size just before this is 9*9 with 10 channels
         self.fc1 = nn.Linear(810,50) #50 hidden layer according to Deep Emotion paper
-        self.fc2 = nn.linear(50,7) #there are 7 emotions
+        self.fc2 = nn.Linear(50,7) #there are 7 emotions
         #----------------------------------------------------------------#
         self.localization = nn.Sequential(
             nn.Conv2d(1, 8, 7), # 42 * 42

@@ -10,7 +10,7 @@ This project is a custom implementation of VGGNet trained to classify images of 
 The code is highly commented, explaining each step of the process.
 
 ## Key Highlights
-*We ran only 35 epochs instead of 300, and our 35 epoch checkpoint can be accessed here [35-Epoch-Checkpoint](./vgg_net-35-64.pt)*
+*We ran only 35 epochs instead of 300, and our 35 epoch checkpoint can be accessed here [35-Epoch-Checkpoint](https://ufile.io/4jsih83r)*
 
 - 62% Test Accuracy against 72% of official implementation
 - Live Webcam Demo
